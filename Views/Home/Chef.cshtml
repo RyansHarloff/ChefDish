@@ -1,0 +1,18 @@
+@model Chef
+
+<h1>Add a</h1>
+<form action="addChef" method="POST">
+    <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <input asp-for ="FirstName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input asp-for ="LastName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="DateOfBirth">Birthday</label>
+        <input asp-for ="DateOfBirth" class="form-control">
+    </div>
+    <button type="Add Chef" class="btn btn-success">Add Chef</button>
+</form>

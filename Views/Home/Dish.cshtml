@@ -1,0 +1,39 @@
+@model Dish
+
+<h1>Add a Dish!</h1>
+<form action="addDish" method="POST">
+    <div class="form-group">
+        <label for="DishName">Name of Dish</label>
+        <input asp-for ="DishName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Calories"># of Calories</label>
+        <input asp-for ="Calories" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input asp-for ="Description" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Tastiness">Tastiness</label>
+        <select asp-for = "Tastiness" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="ChefId">Chef Name</label>
+        <select asp-for = "ChefId" class="form-control">
+            @{
+                foreach(Chef q in ViewBag.AllChefs)
+                {
+                    <option value="@q.ChefId">@q.FirstName @q.LastName</option>
+                }
+            }
+        </select>
+    </div>
+    <button type="Add Dish" class="btn btn-success">Add Dish</button>
+</form>

@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a class="btn btn-primary" href="/Chef" role="button">Add Chef</a>
+<a class="btn btn-success" href="/Dish" role="button">Add Dish</a>
+<div class="container">
+    <H1>Check out our roster of Chefs!</H1>
+    <table class="table table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+        </tr>
+        @{
+            foreach(Chef c in ViewBag.AllChefs){
+                <tr>
+                    <td> @c.FirstName @c.LastName</td>
+                    <td>@c.DateOfBirth</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+<hr>
+<div class="container">
+    <H1>Check out our Dishes!</H1>
+    <table class="table table-dark">
+        <tr>
+            <th>Dish Name</th>
+            <th>Chef Name</th>
+            <th>Tastiness</th>
+            <th>Calories</th>
+        </tr>
+        @{
+            foreach(Dish d in ViewBag.AllDishes){
+                <tr>
+                    <td> @d.DishName</td>
+                    <td>@d.Chef.FirstName @d.Chef.LastName</td>
+                    <td>@d.Tastiness</td>
+                    <td>@d.Calories</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
